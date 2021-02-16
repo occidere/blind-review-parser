@@ -24,14 +24,14 @@
 <br>
 
 ### NAVER 기업 분석 차트
+![image](https://user-images.githubusercontent.com/20942871/108037207-9865dc00-707c-11eb-86dc-f8ae1112be8d.png)
 
-![chart_NAVER](https://user-images.githubusercontent.com/20942871/108014349-02688c00-7051-11eb-8a0c-a3fb558c7a1e.PNG)
 
 <br>
 
-### 네카라 기업 비교 차트
+### 3대 통신사 비교 차트
+![image](https://user-images.githubusercontent.com/20942871/108037523-132ef700-707d-11eb-847a-a5368af82085.png)
 
-![chart_기업비교](https://user-images.githubusercontent.com/20942871/108013900-0e078300-7050-11eb-8a74-1af6581dbe16.PNG)
 
 <br>
 
