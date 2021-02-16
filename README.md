@@ -24,13 +24,13 @@
 <br>
 
 ### NAVER 기업 분석 차트
-![image](https://user-images.githubusercontent.com/20942871/108037207-9865dc00-707c-11eb-86dc-f8ae1112be8d.png)
+![image](https://user-images.githubusercontent.com/20942871/108066754-1dfc8280-70a3-11eb-9af6-635d7a00aa2e.png)
 
 
 <br>
 
-### 3대 통신사 비교 차트
-![image](https://user-images.githubusercontent.com/20942871/108037523-132ef700-707d-11eb-847a-a5368af82085.png)
+### 3N (NCSOFT, NEXON, Netmarble) 비교 차트
+![image](https://user-images.githubusercontent.com/20942871/108067699-84ce6b80-70a4-11eb-9ac7-2d0a8b23423c.png)
 
 
 <br>
