@@ -19,9 +19,9 @@ class Review:
         self.__parse_auth(auth)
 
     def __parse_auth(self, auth: str) -> None:
-        arr = auth.strip().split(' ')
-        self.masked_id, self.job_group, self.rgst_ymd = arr[1], ' '.join(
-            arr[3:-2]), f"{datetime.strptime(arr[-1], '%Y.%m.%d').isoformat()}+09:00"
+        arr = auth.strip().split(' ')  # ['현직원', '·', 'r*****', '·', 'IT', '엔지니어', '-', '2021.02.12']
+        self.emp_status, self.masked_id, self.job_group = arr[0], arr[2], ' '.join(arr[4:-2])
+        self.rgst_ymd = f"{datetime.strptime(arr[-1], '%Y.%m.%d').isoformat()}+09:00"
 
     def to_json_str(self) -> str:
         return json.dumps(self.__dict__, ensure_ascii=False)
@@ -63,7 +63,7 @@ class BlindParser:
                 score_element.find(name='i').decompose()
                 rvtit = review_item.find(name='h3', attrs={'class': 'rvtit'}).find(name='a')
                 auth_element = review_item.find(name='div', attrs={'class': 'auth'})
-                auth_element.find(name='strong').decompose()
+                auth_element.find(name='span').decompose()
 
                 reviews.append(Review(
                     company=self.company,
@@ -98,8 +98,13 @@ class BlindParser:
 
 if __name__ == '__main__':
     companies = [
-        'NAVER', '카카오', '라인플러스', 'COUPANG', '우아한형제들',  # 네카라쿠배
-        'NEXON', '넷마블', 'NCSOFT'  # 3N
+        'NAVER', '네이버클라우드', '네이버웹툰', '네이버제트', '네이버랩스', '네이버파이낸셜', '스노우', '라인플러스', '라인프렌즈', '웍스모바일', '엔테크서비스'
+        '카카오', '카카오뱅크', '카카오페이', '카카오커머스', '카카오모빌리티', '카카오메이커스', '카카오페이지', '카카오게임즈', '카카오엔터프라이즈'
+        'COUPANG', '우아한형제들', '딜리버리히어로코리아', '하이퍼커넥트', '비바리퍼블리카', '당근마켓', '야놀자',
+        'NHN', 'AhnLab', '한글과컴퓨터', '티맥스소프트', '카페24', '가비아'
+        'NEXON', '넷마블', 'NCSOFT', 'NEOPLE', 'NEOWIZ', 'Smilegate', '펍지', '펄어비스', '크래프톤'
+        'SK텔레콤', 'SK플래닛', 'SK하이닉스', '삼성전자', '삼성SDS', 'LG전자', 'LG CNS',
+        'Facebook', 'Apple Korea', 'Amazon', '구글코리아', 'Microsoft', 'eBay Korea', '한국IBM', 'SAP코리아', '한국오라클'
     ]
     for c in companies:
         blind_parser = BlindParser(company=c, es_endpoint='http://localhost:9200')
