@@ -1,5 +1,6 @@
 # blind-review-parser
-블라인드의 기업 리뷰를 파싱한 뒤 ES 에 색인하는 스크립트
+블라인드의 기업 리뷰를 Elastic Stack 으로 색인 및 시각화 하는 프로젝트
+
 
 <br>
 
