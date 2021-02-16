@@ -23,57 +23,15 @@
 
 <br>
 
-### 네카라쿠배
+### NAVER 기업 분석 차트
 
-<details>
-  <summary>차트보기</summary>
-
-### NAVER
-![chart_NAVER](https://user-images.githubusercontent.com/20942871/107969046-88091f00-6ff2-11eb-8e95-fa7d921170bc.PNG)
+![chart_NAVER](https://user-images.githubusercontent.com/20942871/108014349-02688c00-7051-11eb-8a0c-a3fb558c7a1e.PNG)
 
 <br>
 
-#### 카카오
-![chart_카카오](https://user-images.githubusercontent.com/20942871/107969221-d28a9b80-6ff2-11eb-858f-fab57c8ed82e.PNG)
+### 네카라 기업 비교 차트
 
-<br>
-
-### 라인플러스
-![chart_라인플러스](https://user-images.githubusercontent.com/20942871/107969238-d9191300-6ff2-11eb-8354-cb2512e9fdda.PNG)
-
-<br>
-
-### COUPANG
-![chart_COUPANG](https://user-images.githubusercontent.com/20942871/107969260-dfa78a80-6ff2-11eb-99a5-7ff3024494ef.PNG)
-
-<br>
-
-### 우아한형제들
-![chart_우아한형제들](https://user-images.githubusercontent.com/20942871/107969294-ed5d1000-6ff2-11eb-8aff-a317ca3ba2ad.PNG)
-
-</details>
-
-<br>
-
-### 3N
-
-<details>
-  <summary>차트보기</summary>
-
-### NEXON
-![chart_NEXON](https://user-images.githubusercontent.com/20942871/107969570-488f0280-6ff3-11eb-9c8b-51b13362a027.PNG)
-
-<br>
-
-### 넷마블
-![chart_넷마블](https://user-images.githubusercontent.com/20942871/107969606-547ac480-6ff3-11eb-882c-517a37d0f28e.PNG)
-
-<br>
-
-### NCSOFT
-![chart_NCSOFT](https://user-images.githubusercontent.com/20942871/107969637-5d6b9600-6ff3-11eb-9c6f-17122b001815.PNG)
-
-</details>
+![chart_기업비교](https://user-images.githubusercontent.com/20942871/108013900-0e078300-7050-11eb-8a74-1af6581dbe16.PNG)
 
 <br>
 
