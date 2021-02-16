@@ -3,7 +3,7 @@
 
 <br>
 
-## 블라인드 기업 리뷰
+## 블라인드 기업 리뷰?
 - Page: https://www.teamblind.com/kr/company
 - Review sample (구글코리아)
 
@@ -17,7 +17,7 @@
 <br>
 
 
-## Kibana Chart
+## Kibana chart examples
 
 - 아래 차트는 2020-07-01 ~ 2021-02-16 까지 작성된 리뷰 데이터로 생성되었습니다.
 
@@ -37,8 +37,13 @@
 
 ## How to use?
 
-1. `companies` 리스트에 블라인드에 등록된 기준의 회사명을 입력
-2. `es_endpoint` 에 리뷰를 저장할 Elasticsearch 주소 입력
+#### 1. Elasticsearch & Kibana 실행
+- 참고: https://www.elastic.co/kr/start
+
+#### 2. Blind 기업 리뷰 수집 & ES 색인
+
+1. [`blind_review_parser.py`](https://github.com/occidere/blind-review-parser/blob/main/blind_review_parser.py) 파일 내 `companies` 리스트에 블라인드에 등록된 기준의 회사명을 입력
+2. `es_endpoint` 에 리뷰를 저장할 Elasticsearch 주소 입력 후 실행
 
 ```python
 if __name__ == '__main__':
@@ -50,3 +55,9 @@ if __name__ == '__main__':
         blind_parser = BlindParser(company=c, es_endpoint='http://localhost:9200')
         blind_parser.run()
 ```
+
+#### 3. [`blind_review_saved_object.ndjson`](https://github.com/occidere/blind-review-parser/blob/main/blind_review_saved_object.ndjson) 파일 import
+- Kibana 에서 Stack Management > Saved objects 메뉴
+<img src="https://user-images.githubusercontent.com/20942871/108064772-7bdb9b00-70a0-11eb-839b-50fe0b018b49.png" width="60%" />
+
+#### 4. Kibana 의 Analytics 메뉴에서 Visualize / Dashboard 확인
