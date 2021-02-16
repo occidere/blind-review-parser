@@ -103,7 +103,7 @@ if __name__ == '__main__':
         'COUPANG', '우아한형제들', '딜리버리히어로코리아', '하이퍼커넥트', '비바리퍼블리카', '당근마켓', '야놀자',
         'NHN', 'AhnLab', '한글과컴퓨터', '티맥스소프트', '카페24', '가비아',
         'NEXON', '넷마블', 'NCSOFT', 'NEOPLE', 'NEOWIZ', 'Smilegate', '펍지', '펄어비스', '크래프톤',
-        'SK', 'SK텔레콤', 'SK플래닛', 'SK하이닉스', 'SK브로드밴드', '삼성전자', '삼성SDS', 'LG전자', 'LG CNS',
+        'SK', 'SK텔레콤', 'SK플래닛', 'SK하이닉스', 'SK브로드밴드', '삼성전자', '삼성SDS', 'LG전자', 'LG CNS', 'LG유플러스', 'KT'
         'Facebook', 'Apple Korea', 'Amazon', '구글코리아', 'Microsoft', 'eBay Korea', '한국IBM', 'SAP코리아', '한국오라클'
     ]
     for c in companies:
