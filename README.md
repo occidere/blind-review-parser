@@ -12,26 +12,30 @@
 
 
 >### ⚠ Disclaimer
-> 리뷰 전체 상세내용을 확인하기 위해선 로그인 & 본인 기업 리뷰가 필요하기 때문에, **리뷰 제목과 평점, 직군 등의 오픈된 정보만 수집**하였습니다.
+>리뷰 전체 상세내용을 확인하기 위해선 로그인 & 본인 기업 리뷰가 필요하기 때문에, **리뷰 제목과 평점, 직군 등의 오픈된 정보만 수집**하였습니다.
+>
+>**모든 리뷰의 저작권은 Teamblind. Inc 에 있습니다.**
 
 
 <br>
 
+## Kibana Demo
 
-## Kibana chart examples
-
-- 아래 차트는 2020-07-01 ~ 2021-02-16 까지 작성된 리뷰 데이터로 생성되었습니다.
-
-<br>
-
-### NAVER 기업 분석 차트
-![image](https://user-images.githubusercontent.com/20942871/108066754-1dfc8280-70a3-11eb-9af6-635d7a00aa2e.png)
-
+>Demo 링크에서 직접 상호작용이 가능합니다. (heroku free tier 인 관계로 다소 느릴 수 있습니다)
+>
+>아래 샘플차트는 2020-07-01 ~ 2021-02-18 까지 작성된 리뷰 데이터로 생성되었습니다.
 
 <br>
 
-### 3N (NCSOFT, NEXON, Netmarble) 비교 차트
-![image](https://user-images.githubusercontent.com/20942871/108067699-84ce6b80-70a4-11eb-9ac7-2d0a8b23423c.png)
+### 단일 기업 평가 대시보드 (Demo: https://me2.do/GozrS73w)
+
+- ![image](https://user-images.githubusercontent.com/20942871/108066754-1dfc8280-70a3-11eb-9af6-635d7a00aa2e.png)
+
+<br>
+
+### 다중 기업 비교 대시보드 (Demo: https://me2.do/GeWwkXBd)
+
+- ![image](https://user-images.githubusercontent.com/20942871/108067699-84ce6b80-70a4-11eb-9ac7-2d0a8b23423c.png)
 
 
 <br>
