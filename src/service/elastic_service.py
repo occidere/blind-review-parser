@@ -6,14 +6,13 @@ import dateutil.parser as d_parser
 import requests
 from requests import Response
 
-from src.parser.review import Review
+from src.vo.review import Review
 
 
 class ElasticService:
 
-    def __init__(self, es_endpoint: str = 'http://localhost:9200'):
-        self.es_endpoint = es_endpoint
-        self.index = 'blind-review'
+    def __init__(self, es_endpoint: str = 'http://localhost:9200', base64_auth: str = ''):
+        self.es_endpoint, self.base64_auth, self.index = es_endpoint, base64_auth, 'blind-review'
 
     def bulk_upsert(self, reviews: List[Review]) -> Response:
         bulk_req: List[str] = []
@@ -27,9 +26,13 @@ class ElasticService:
                 }, ensure_ascii=False), '\n',
                 review.to_json_str(), '\n'
             ]
+        # elastic:GKtzvhlwCFPkrsl8ZC8qIafv
         return requests.post(
             url=f'{self.es_endpoint}/_bulk',
-            headers={'Content-Type': 'application/x-ndjson'},
+            headers={
+                'Content-Type': 'application/x-ndjson',
+                'Authorization': 'Basic ' + self.base64_auth if self.base64_auth else ''
+            },
             data=(''.join(bulk_req).encode('utf-8'))
         )
 
@@ -43,7 +46,10 @@ class ElasticService:
                 })
             resp: Response = requests.get(
                 url=f'{self.es_endpoint}/_mget',
-                headers={'Content-Type': 'application/json'},
+                headers={
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic ' + self.base64_auth if self.base64_auth else ''
+                },
                 data=(json.dumps({'docs': docs}))
             )
             for doc in resp.json().get('docs', []):

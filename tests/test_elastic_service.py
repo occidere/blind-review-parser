@@ -1,6 +1,6 @@
 import unittest
 
-from src.blind_review_parser import *
+from src.parser.blind_review_parser import *
 
 
 class TestElasticService(unittest.TestCase):

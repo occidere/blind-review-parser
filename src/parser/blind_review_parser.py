@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from requests import Response
 
-from src.parser.review import Review
+from src.vo.review import Review
 from src.service.elastic_service import ElasticService
 
 
