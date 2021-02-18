@@ -11,9 +11,9 @@ from src.service.elastic_service import ElasticService
 
 class BlindParser:
 
-    def __init__(self, company: str, es_endpoint: str) -> None:
+    def __init__(self, company: str, es_endpoint: str, es_base64_auth: str = '') -> None:
         self.company, self.es_endpoint = company, es_endpoint
-        self.es_service = ElasticService(es_endpoint)
+        self.es_service = ElasticService(es_endpoint, es_base64_auth)
 
     def run(self, p_num_start: int = 1, p_num_end: int = 300) -> None:
         print(f'[{self.company} 리뷰 수집 시작]')
@@ -33,8 +33,11 @@ class BlindParser:
                 if reviews:
                     # 수집한 리뷰가 1개라도 이미 ES 에 존재하면 종료 (최신 리뷰만 수집)
                     finished = self.es_service.exist_any(reviews)
-                    self.es_service.bulk_upsert(reviews)
-                    print(f'> {p_num} 페이지 파싱 & ES 색인 완료 (리뷰 개수: {len(reviews)})')
+                    bulk_resp = self.es_service.bulk_upsert(reviews)
+                    if 200 <= bulk_resp.status_code < 300:
+                        print(f'> {p_num} 페이지 ES 색인 완료 (리뷰 개수: {len(reviews)})')
+                    else:
+                        print(f'> {p_num} 페이지 ES 색인 실패 (리뷰 개수: {len(reviews)}) => {bulk_resp.text}')
                 else:  # 페이지 내 리뷰가 없는경우 종료
                     finished = True
                 p_num += 1
