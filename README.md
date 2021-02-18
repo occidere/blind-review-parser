@@ -29,13 +29,13 @@
 
 ### 단일 기업 평가 대시보드 (Demo: https://me2.do/GozrS73w)
 
-- ![image](https://user-images.githubusercontent.com/20942871/108066754-1dfc8280-70a3-11eb-9af6-635d7a00aa2e.png)
+<img src="https://user-images.githubusercontent.com/20942871/108374373-41126800-7244-11eb-84df-0b9068e5e63e.png" width="60%"/>
 
 <br>
 
 ### 다중 기업 비교 대시보드 (Demo: https://me2.do/GeWwkXBd)
 
-- ![image](https://user-images.githubusercontent.com/20942871/108067699-84ce6b80-70a4-11eb-9ac7-2d0a8b23423c.png)
+<img src="https://user-images.githubusercontent.com/20942871/108374652-8898f400-7244-11eb-9665-1c7c613fb292.png" width="60%"/>
 
 
 <br>
@@ -47,7 +47,7 @@
 
 #### 2. Blind 기업 리뷰 수집 & ES 색인
 
-1. [`blind_review_parser.py`](https://github.com/occidere/blind-review-parser/blob/main/blind_review_parser.py) 파일 내 `companies` 리스트에 블라인드에 등록된 기준의 회사명을 입력
+1. [`src/__main__.py`](https://github.com/occidere/blind-review-parser/blob/main/src/__main__.py) 파일 내 `companies` 리스트에 블라인드에 등록된 기준의 회사명을 입력
 2. `es_endpoint` 에 리뷰를 저장할 Elasticsearch 주소 입력 후 실행
 
 ```python
@@ -56,9 +56,16 @@ if __name__ == '__main__':
         'NAVER', '카카오', '라인플러스', 'COUPANG', '우아한형제들',  # 네카라쿠배
         'NEXON', '넷마블', 'NCSOFT'  # 3N
     ]
-    for c in companies:
-        blind_parser = BlindParser(company=c, es_endpoint='http://localhost:9200')
-        blind_parser.run()
+    for company in companies:
+        blind_parser = BlindParser(
+            company=company,
+            es_endpoint='http://localhost:9200',  # ES 주소 입력
+            es_base64_auth='zWxdpYzp2z6d-mdtyc2w4Y=='  # id:pw 가 있으면 base64 로 인코딩하여 입력 (없을 시 삭제)
+        )
+        blind_parser.run(
+            p_num_start=1,  # 수집할 리뷰 페이지의 시작번호 (이상)
+            p_num_end=300  # 수집할 리뷰 페이지의 마지막 번호 (이하)
+        )
 ```
 
 #### 3. [`blind_review_saved_object.ndjson`](https://github.com/occidere/blind-review-parser/blob/main/blind_review_saved_object.ndjson) 파일 import
