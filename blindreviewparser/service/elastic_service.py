@@ -6,7 +6,7 @@ import dateutil.parser as d_parser
 import requests
 from requests import Response
 
-from src.vo.review import Review
+from blindreviewparser.vo.review import Review
 
 
 class ElasticService:

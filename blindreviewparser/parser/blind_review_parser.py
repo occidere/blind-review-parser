@@ -5,8 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 from requests import Response
 
-from src.vo.review import Review
-from src.service.elastic_service import ElasticService
+from blindreviewparser.vo.review import Review
+from blindreviewparser.service.elastic_service import ElasticService
 
 
 class BlindParser:

@@ -1,4 +1,4 @@
-from src.parser.blind_review_parser import BlindParser
+from blindreviewparser.parser.blind_review_parser import BlindParser
 
 if __name__ == '__main__':
     companies = [
