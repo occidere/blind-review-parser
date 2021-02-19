@@ -6,10 +6,14 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('--es-endpoint', dest='es_endpoint', default='localhost:9200', help='리뷰를 저장할 ES Endpoint 를 지정 (기본값: localhost:9200)')
     parser.add_argument('--es-base64-auth', dest='es_base64_auth', default='', help='ES 보안이 있는경우 id:pw 를 base64 로 인코딩한 값 (기본값: 없음)')
+    parser.add_argument('--p-num-start', dest='p_num_start', default=1, help='리뷰 페이지 시작번호 (이상)')
+    parser.add_argument('--p-num-end', dest='p_num_end', default=300, help='리뷰 페이지 끝번호 (이하)')
     args = parser.parse_args()
 
     es_endpoint: str = args.es_endpoint
     es_base64_auth: str = args.es_base64_auth
+    p_num_start: int = args.p_num_start
+    p_num_end: int = args.p_num_end
 
     companies = [
         'NAVER', '네이버클라우드', '네이버웹툰', '네이버제트', '네이버랩스', '네이버파이낸셜', '스노우', '라인플러스', '라인프렌즈', '웍스모바일', '엔테크서비스',
@@ -22,4 +26,4 @@ if __name__ == '__main__':
     ]
     for company in companies:
         blind_parser = BlindParser(company=company, es_endpoint=es_endpoint, es_base64_auth=es_base64_auth)
-        blind_parser.run()
+        blind_parser.run(p_num_start=p_num_start, p_num_end=p_num_end)
