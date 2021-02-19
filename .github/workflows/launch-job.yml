@@ -28,4 +28,8 @@ jobs:
         ES_ENDPOINT: ${{ secrets.ES_ENDPOINT }}
         ES_BASE64_AUTH: ${{ secrets.ES_BASE64_AUTH }}
       run: |
-        python -m blindreviewparser --es-endpoint="${ES_ENDPOINT}" --es-base64-auth="${ES_BASE64_AUTH}"
+        python -m blindreviewparser \
+            --es-endpoint="${ES_ENDPOINT}" \
+            --es-base64-auth="${ES_BASE64_AUTH}" \
+            --p-num-start=1 \
+            --p-num-end=100
