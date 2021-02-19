@@ -1,6 +1,16 @@
+from argparse import ArgumentParser
+
 from blindreviewparser.parser.blind_review_parser import BlindParser
 
 if __name__ == '__main__':
+    parser = ArgumentParser()
+    parser.add_argument('--es-endpoint', dest='es_endpoint', default='localhost:9200', help='리뷰를 저장할 ES Endpoint 를 지정 (기본값: localhost:9200)')
+    parser.add_argument('--es-base64-auth', dest='es_base64_auth', default='', help='ES 보안이 있는경우 id:pw 를 base64 로 인코딩한 값 (기본값: 없음)')
+    args = parser.parse_args()
+
+    es_endpoint: str = args.es_endpoint
+    es_base64_auth: str = args.es_base64_auth
+
     companies = [
         'NAVER', '네이버클라우드', '네이버웹툰', '네이버제트', '네이버랩스', '네이버파이낸셜', '스노우', '라인플러스', '라인프렌즈', '웍스모바일', '엔테크서비스',
         '카카오', '카카오뱅크', '카카오페이', '카카오커머스', '카카오모빌리티', '카카오메이커스', '카카오페이지', '카카오게임즈', '카카오엔터프라이즈',
@@ -11,5 +21,5 @@ if __name__ == '__main__':
         'Facebook', 'Apple Korea', 'Amazon', '구글코리아', 'Microsoft', 'eBay Korea', '한국IBM', 'SAP코리아', '한국오라클'
     ]
     for company in companies:
-        blind_parser = BlindParser(company=company, es_endpoint='http://localhost:9200')
+        blind_parser = BlindParser(company=company, es_endpoint=es_endpoint, es_base64_auth=es_base64_auth)
         blind_parser.run()
