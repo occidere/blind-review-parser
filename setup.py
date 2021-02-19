@@ -22,6 +22,7 @@ setup(
         'pytest',
         'requests',
         'beautifulsoup4',
+        'python-dateutil'
     ]
 )
 
